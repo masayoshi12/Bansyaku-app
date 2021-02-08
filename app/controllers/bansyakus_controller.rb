@@ -1,5 +1,7 @@
 class BansyakusController < ApplicationController
   before_action :set_bansyaku, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
     @bansyakus = Bansyaku.includes(:user)
@@ -50,6 +52,10 @@ class BansyakusController < ApplicationController
 
   def set_bansyaku
     @bansyaku = Bansyaku.find(params[:id])
+  end
+
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @bansyaku.user
   end
   
 end
