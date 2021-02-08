@@ -1,0 +1,12 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+       <div class="greeting"> 
+       <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link%>
+       </div>
+    <% end %>
+    <div class="card__wrapper">
+      <%# render partial: 'bansyakupost', collection: @bansyakuposts %>
+    </div>
+  </div>
+</main>
