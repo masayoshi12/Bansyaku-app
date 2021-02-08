@@ -21,6 +21,25 @@ class BansyakusController < ApplicationController
   def show
   end
   
+  def edit
+  end
+
+  def update
+    if @bansyaku.update(bansyaku_params)
+      redirect_to bansyaku_path(@bansyaku)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @bansyaku.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   
   def bansyaku_params
