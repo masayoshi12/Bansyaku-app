@@ -4,7 +4,7 @@
       <p class="bansyaku__hedding">
         <%= @bansyaku.sake_name %>
       </p>
-      <%#= link_to "by #{@bansyaku.user.nickname}", user_path(@bansyaku.user), class: :bansyaku__user %>
+      <%= link_to "by #{@bansyaku.user.nickname}", user_path(@bansyaku.user), class: :bansyaku__user %>
       <% if current_user == @bansyaku.user%>
         <div class="bansyaku__manage">
           <%= link_to "編集する", edit_bansyaku_path(@bansyaku), class: :bansyaku__btn %>
@@ -28,25 +28,25 @@
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with local: true do |f|%>
+      <div class="bansyaku__comments">
+        <% if user_signed_in? %>
+          <%= form_with model: [@bansyaku, @review], local: true do |f|%>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge %>
+              <%= f.label :comment, "コメント" %><br />
+              <%= f.text_field :comment %>
             </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
+              <%= f.submit "送信する", class: :form__btn  %>
             </div>
-          <%# <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
-        <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <li class="comments_list">
-              <%# <%= " コメントのテキスト "%>
-              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+          <% end %> 
+        <% end %>
+        <ul class="reviews_lists">
+          <% @reviews.each do |review| %>
+            <li class="reviews_list">
+              <%= review.comment%>
+              <%= link_to "（#{review.user.nickname}）", user_path(review.user), class: :review_user %>
             </li>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -19,6 +19,8 @@ class BansyakusController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = @bansyaku.reviews
   end
   
   def edit

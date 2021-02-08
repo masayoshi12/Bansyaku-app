@@ -219,7 +219,7 @@ a {
   background: #999;
 }
 
-.bansyaku__comments{
+.bansyaku__reviews{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -229,12 +229,12 @@ a {
   padding-left: 20px;
 }
 
-.comments_list{
+.reviews_list{
   list-style-type: square;
   padding-bottom: 5px;
 }
 
-.comment_user{
+.review_user{
   font-size: 16px;
   color: #999;
   text-decoration: underline;

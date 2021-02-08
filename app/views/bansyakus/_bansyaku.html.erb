@@ -5,6 +5,6 @@
     <p class="card__summary">
     <%= bansyaku.sake_name %>
     </p>
-    <%= link_to "by #{bansyaku.user.nickname}", bansyaku_path(bansyaku.user), class: :card__user %>
+    <%= link_to "by #{bansyaku.user.nickname}", user_path(bansyaku.user), class: :card__user %>
   </div>
 </div>

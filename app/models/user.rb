@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bansyakus
+  has_many :reviews
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
