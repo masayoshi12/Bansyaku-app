@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(bansyaku.image, class: :card__img ), bansyaku_path(bansyaku) %>
+  <div class="card__body">
+    <%= link_to bansyaku.sake_name, bansyaku_path(bansyaku), class: :card__title%>
+    <p class="card__summary">
+    <%= bansyaku.sake_name %>
+    </p>
+    <%= link_to "by #{bansyaku.user.nickname}", user_path(bansyaku.user), class: :card__user %>
+  </div>
+</div>
