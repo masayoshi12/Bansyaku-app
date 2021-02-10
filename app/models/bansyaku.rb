@@ -1,7 +1,7 @@
 class Bansyaku < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :sake

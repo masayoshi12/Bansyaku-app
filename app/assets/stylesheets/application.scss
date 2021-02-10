@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+
+ @import "bulma";
+
+ body {
+  background-image: url("backimage_2.jpeg");
+  background-size: cover;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+ }
+  
+ .notification:not(:last-child){
+   margin-bottom: 0;
+ }
+
+ li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
