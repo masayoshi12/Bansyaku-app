@@ -4,7 +4,7 @@
       <p class="bansyaku__hedding">
         <%= @bansyaku.sake_name %>
       </p>
-      <%= link_to "by #{@bansyaku.user.nickname}", user_path(@bansyaku.user), class: :bansyaku__user %>
+      <%= link_to "#{@bansyaku.user.nickname}さんの晩酌", user_path(@bansyaku.user), class: :bansyaku__user %>
       <% if current_user == @bansyaku.user%>
         <div class="bansyaku__manage">
           <%= link_to "編集する", edit_bansyaku_path(@bansyaku), class: :bansyaku__btn %>
