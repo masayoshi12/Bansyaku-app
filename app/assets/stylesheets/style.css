@@ -202,14 +202,14 @@ a {
   min-height: calc(100vh - 161px);
 }
 .bansyaku__hedding{
-  
+  color: #fafafa;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
 .bansyaku__user{
   display: block;
-  font-size: 16px;
+  font-size: 25px;
   color: #999;
   text-align: center;
   text-decoration: underline;
@@ -226,10 +226,16 @@ a {
   margin-bottom: 8px;
 }
 .detail__title{
+  background-color:#f5f5f5;
+  font-size: 20px;
+  font-weight: bold;
+}
+.detail__message{
   color: #f5f5f5;
   font-size: 20px;
   font-weight: bold;
 }
+
 .bansyaku__manage{
   color: #f5f5f5;
   display: flex;
@@ -294,6 +300,7 @@ a {
 }
 .table__col2{
   text-align: left;
+  color: #fafafa;
   border: 1px solid #f5f5f5;
   border-collapse: collapse;
   width: 70%;

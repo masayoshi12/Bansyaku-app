@@ -1,9 +1,7 @@
 <main class="main">
   <div class="inner">
     <div class="bansyaku__wrapper">
-      <p class="bansyaku__hedding">
-        <%= @bansyaku.sake_name %>
-      </p>
+      <p class="bansyaku__hedding"></p>
       <%= link_to "#{@bansyaku.user.nickname}さんの晩酌", user_path(@bansyaku.user), class: :bansyaku__user %>
       <% if current_user == @bansyaku.user%>
         <div class="bansyaku__manage">
@@ -16,15 +14,39 @@
       </div>
       <div class="bansyaku__body">
         <div class="bansyaku__detail">
-          <p class="detail__title">おつまみの名前</p>
+          <p class="detail__title">お酒の名前</p>
+          <p class="detail__message">
+          <%= @bansyaku.sake_name %>
+          </p>
+        </div>
+        <div class="bansyaku__detail">
+          <p class="detail__title">おつまみ(1品目)の名前</p>
           <p class="detail__message">
             <%= @bansyaku.onetumami_name %>
           </p>
         </div>
         <div class="bansyaku__detail">
-          <p class="detail__title">おつまみの作り方</p>
+          <p class="detail__title">おつまみ(1品目)の作り方</p>
           <p class="detail__message">
             <%= @bansyaku.onetumami_recipe %>
+          </p>
+        </div>
+        <div class="bansyaku__detail">
+          <p class="detail__title">おつまみ(2品目)の名前</p>
+          <p class="detail__message">
+          <%= @bansyaku.twotumami_name %>
+          </p>
+        </div>
+        <div class="bansyaku__detail">
+          <p class="detail__title">おつまみ(2品目)の作り方</p>
+          <p class="detail__message">
+            <%= @bansyaku.twotumami_recipe %>
+          </p>
+        </div>
+        <div class="bansyaku__detail">
+          <p class="detail__title">投稿者コメント</p>
+          <p class="detail__message">
+            <%= @bansyaku.user_comment %>
           </p>
         </div>
       </div>
