@@ -1,59 +1,70 @@
 <%= form_with(model: bansyaku, local: true) do |f|%>
 
   <div class="field">
-    <%= f.label :image, "お酒の画像　※必須" %><br />
+    <%= f.label :image, "晩酌画像" %><br />
+    <span class="indispensable">必須</span>
     <%= f.file_field :image %>
   </div>
   
   <div id="image-list"> </div>
 
   <div class="field">
-    <%= f.label :sake_name, "お酒の名前　※必須" %><br />
-    <%= f.text_field :sake_name %>
+    <%= f.label :sake_name, "お酒の名前" %><br />
+    <span class="indispensable">必須</span>
+    <%= f.text_field :sake_name ,placeholder:"お酒の名前を入力してください", maxlength:"40" %>
   </div>
 
   <div class="field">
-    <%= f.label :sake_id, "お酒の種類　※必須" %><br />
+    <%= f.label :sake_id, "お酒の種類" %><br />
+    <span class="indispensable">必須</span>
     <%= f.collection_select(:sake_id, Sake.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :warimono_id, "お酒の割り物　※任意" %><br />
+    <%= f.label :warimono_id, "お酒の割り物" %><br />
+    <span class="any">任意</span>
     <%= f.collection_select(:warimono_id, Warimono.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :onetumami_name, "おつまみの名前　※必至" %><br />
+    <%= f.label :onetumami_name, "おつまみの名前(1品目)" %><br />
+    <span class="indispensable">必須</span>
     <%= f.text_field :onetumami_name %>
   </div>
 
   <div class="field">
-    <%= f.label :onetumami_id, "おつまみの種類　※必須" %><br />
+    <%= f.label :onetumami_id, "おつまみの種類(1品目)" %><br />
+    <span class="indispensable">必須</span>
     <%= f.collection_select(:onetumami_id, Onetumami.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
-  <div class="field">
-    <%= f.label :onetumami_recipe, "おつまみの作り方　※任意" %><br />
-    <%= f.text_area :onetumami_recipe %>
-  </div>
-
+   <div class="field">
+     <%= f.label :onetumami_recipe, "おつまみの作り方(1品目)" %><br />
+     <span class="any">任意</span>
+     <%= f.text_area :onetumami_recipe %>
+   </div>
+   
     <div class="field">
-    <%= f.label :twotumami_name, "おつまみの名前　※任意" %><br />
+    <%= f.label :twotumami_name, "おつまみの名前(2品目)" %><br />
+    <span class="any">任意</span>
     <%= f.text_field :twotumami_name %>
   </div>
 
   <div class="field">
-    <%= f.label :twotumami_id, "おつまみの種類　※任意" %><br />
+    <%= f.label :twotumami_id, "おつまみの種類(2品目)" %><br />
+    <span class="any">任意</span>
     <%= f.collection_select(:twotumami_id, Twotumami.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :twotumami_recipe, "おつまみの作り方　※任意" %><br />
+    <%= f.label :twotumami_recipe, "おつまみの作り方(2品目)" %><br />
+    <span class="any">任意</span>
     <%= f.text_area :twotumami_recipe %>
   </div>
 
   <div class="field">
     <%= f.label :user_comment, "お好きなコメントをどうぞ" %><br />
+    <span class="any">任意</span>
     <%= f.text_area :user_comment %>
   </div>
   

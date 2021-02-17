@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= link_to bansyaku.sake_name, bansyaku_path(bansyaku), class: :card__title%>
     <p class="card__summary">
-    <%= bansyaku.sake_name %>
+    <%= bansyaku.onetumami_name %>
     </p>
     <%= link_to "#{bansyaku.user.nickname}さんの晩酌", user_path(bansyaku.user), class: :card__user %>
   </div>
