@@ -5,8 +5,8 @@
       <%= link_to "#{@bansyaku.user.nickname}さんの晩酌", user_path(@bansyaku.user), class: :bansyaku__user %>
       <% if current_user == @bansyaku.user%>
         <div class="bansyaku__manage">
-          <%= link_to "編集する", edit_bansyaku_path(@bansyaku), class: :bansyaku__btn %>
-          <%= link_to "削除する", bansyaku_path(@bansyaku), method: :delete, class: :bansyaku__btn %>
+          <%= link_to "編集する", edit_bansyaku_path(@bansyaku), class: :bansyaku__edit_btn %>
+          <%= link_to "削除する", bansyaku_path(@bansyaku), method: :delete, class: :bansyaku__delete_btn %>
         </div>
       <% end %>
       <div class="bansyaku__image">
@@ -66,7 +66,7 @@
           <% @reviews.each do |review| %>
             <li class="reviews_list">
               <%= review.comment%>
-              <%= link_to "（#{review.user.nickname}）", user_path(review.user), class: :review_user %>
+              <%= link_to "#{review.user.nickname}さんのコメント", user_path(review.user), class: :review_user %>
             </li>
           <% end %>
         </ul>
